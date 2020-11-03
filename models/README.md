@@ -1,0 +1,1 @@
+The pretrained models should be downloaded to this directory.

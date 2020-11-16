@@ -88,6 +88,11 @@ The code has been tested on Ubuntu 16.04 and CentOS 7 with Python 3.7, CUDA 10.0
     cd $CF_ROOT/src/lib/model/networks/DCNv2
     ./make.sh
     ```
+    **Note:** If the DCNv2 folder does not exist in the `networks` directory, it can be downloaded using this command:
+    ```bash
+    cd $CF_ROOT/src/lib/model/networks
+    git clone https://github.com/CharlesShang/DCNv2/
+    ```
 
 ## Dataset Preparation
 

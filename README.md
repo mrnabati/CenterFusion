@@ -124,8 +124,10 @@ The code has been tested on Ubuntu 16.04 and CentOS 7 with Python 3.7, CUDA 10.0
             |   `-- RADAR_FRONT_RIGHT
             |-- sweeps
             |-- v1.0-mini
+            |-- v1.0-test
             `-- v1.0-trainval
     ~~~
+   
 
 3. Run the `convert_nuScenes.py` script to convet the nuScenes dataset to COCO format:
     ```bash

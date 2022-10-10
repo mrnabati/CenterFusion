@@ -6,7 +6,7 @@ from nuscenes.utils.geometry_utils import view_points, transform_matrix
 from nuscenes.utils.data_classes import RadarPointCloud
 from functools import reduce
 from typing import Tuple, Dict
-from model.utils import _topk, _tranpose_and_gather_feat
+from model.utils import _nms, _sigmoid, _topk, _tranpose_and_gather_feat
 import os.path as osp
 import torch
 import timeit
@@ -208,7 +208,8 @@ def get_dist_thresh(calib, ct, dim, alpha):
 def generate_pc_hm(output, pc_dep, calib, opt):
       K = opt.K
       # K = 100
-      heat = output['hm']
+      heat = _sigmoid(output['hm'])
+      heat = _nms(heat)
       wh = output['wh']
       pc_hm = torch.zeros_like(pc_dep)
 

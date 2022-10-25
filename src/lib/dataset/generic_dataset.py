@@ -29,7 +29,7 @@ from utils.ddd_utils import comput_corners_3d, alpha2rot_y, get_pc_hm
 def get_dist_thresh(calib, ct, dim, alpha):
     rotation_y = alpha2rot_y(alpha, ct[0], calib[0, 2], calib[0, 0])
     corners_3d = comput_corners_3d(dim, rotation_y)
-    dist_thresh = max(corners_3d[:,2]) - min(corners_3d[:,2]) / 2.0
+    dist_thresh = (max(corners_3d[:,2]) - min(corners_3d[:,2])) / 2.0
     return dist_thresh
 
 
